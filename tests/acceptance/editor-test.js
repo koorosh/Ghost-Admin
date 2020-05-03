@@ -466,7 +466,7 @@ describe('Acceptance: Editor', function () {
             expect(currentURL(), 'currentURL')
                 .to.equal('/editor/post/1');
 
-            await fillIn('[data-test-editor-title-input]', Array(260).join('a'));
+            await fillIn('[data-test-editor-title-input]', Array(1000000001).join('a'));
             await click('[data-test-publishmenu-trigger]');
             await click('[data-test-publishmenu-save]');
 
@@ -478,7 +478,7 @@ describe('Acceptance: Editor', function () {
             expect(
                 find('.gh-alert').textContent,
                 'alert text after invalid title'
-            ).to.match(/Title cannot be longer than 255 characters/);
+            ).to.match(/Title cannot be longer than 1000000000 characters/);
         });
 
         // NOTE: these tests are specific to the mobiledoc editor
