@@ -28,8 +28,8 @@ export default BaseValidator.create({
             this.invalidate();
         }
 
-        if (!validator.isLength(model.title || '', 0, 255)) {
-            model.errors.add('title', 'Title cannot be longer than 255 characters.');
+        if (!validator.isLength(model.title || '', 0, 1000000001)) {
+            model.errors.add('title', 'Title cannot be longer than 1000000000 characters.');
             this.invalidate();
         }
     },
